@@ -38,6 +38,8 @@ namespace HexaMazeRetreat.Editor
             this.Name = "EditorControl";
             this.Size = new System.Drawing.Size(2031, 1117);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.EditorControl_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EditorControl_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EditorControl_MouseMove);
             this.ResumeLayout(false);
 
         }

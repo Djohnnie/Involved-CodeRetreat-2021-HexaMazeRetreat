@@ -15,8 +15,9 @@
         Farm2,
         Farm3,
         Farm4,
+        Dirt,
         Mars,
         Sand,
-        Rock
+        Stone
     }
 }

@@ -38,11 +38,10 @@ namespace HexaMazeRetreat.Editor
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapWidthToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.mapHeightToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mazeEditor = new HexaMazeRetreat.Editor.EditorControl();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,10 +54,13 @@ namespace HexaMazeRetreat.Editor
             this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem19 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.dirtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mazeEditor = new HexaMazeRetreat.Editor.EditorControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -107,7 +109,9 @@ namespace HexaMazeRetreat.Editor
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
             this.toolStripMenuItem4,
-            this.toolStripMenuItem5});
+            this.toolStripMenuItem5,
+            this.mapWidthToolStripTextBox,
+            this.mapHeightToolStripTextBox});
             this.toolStripDropDownButton1.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_dirt;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -118,47 +122,53 @@ namespace HexaMazeRetreat.Editor
             // 
             this.toolStripMenuItem1.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_dirt;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(393, 76);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(401, 76);
             this.toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(393, 76);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(401, 76);
             this.toolStripMenuItem2.Text = "toolStripMenuItem2";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(393, 76);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(401, 76);
             this.toolStripMenuItem3.Text = "toolStripMenuItem3";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(393, 76);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(401, 76);
             this.toolStripMenuItem4.Text = "toolStripMenuItem4";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(393, 76);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(401, 76);
             this.toolStripMenuItem5.Text = "toolStripMenuItem5";
+            // 
+            // mapWidthToolStripTextBox
+            // 
+            this.mapWidthToolStripTextBox.AutoSize = false;
+            this.mapWidthToolStripTextBox.Margin = new System.Windows.Forms.Padding(10);
+            this.mapWidthToolStripTextBox.Name = "mapWidthToolStripTextBox";
+            this.mapWidthToolStripTextBox.Size = new System.Drawing.Size(250, 39);
+            this.mapWidthToolStripTextBox.TextChanged += new System.EventHandler(this.mapWidthToolStripTextBox_TextChanged);
+            // 
+            // mapHeightToolStripTextBox
+            // 
+            this.mapHeightToolStripTextBox.AutoSize = false;
+            this.mapHeightToolStripTextBox.Margin = new System.Windows.Forms.Padding(10);
+            this.mapHeightToolStripTextBox.Name = "mapHeightToolStripTextBox";
+            this.mapHeightToolStripTextBox.Size = new System.Drawing.Size(250, 39);
+            this.mapHeightToolStripTextBox.TextChanged += new System.EventHandler(this.mapHeightToolStripTextBox_TextChanged);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(83, 6);
-            // 
-            // mazeEditor
-            // 
-            this.mazeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mazeEditor.Location = new System.Drawing.Point(91, 3);
-            this.mazeEditor.MapHeight = 10;
-            this.mazeEditor.MapWidth = 10;
-            this.mazeEditor.Name = "mazeEditor";
-            this.mazeEditor.Size = new System.Drawing.Size(1903, 973);
-            this.mazeEditor.TabIndex = 1;
             // 
             // toolStripDropDownButton2
             // 
@@ -181,29 +191,6 @@ namespace HexaMazeRetreat.Editor
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
             this.toolStripDropDownButton2.Size = new System.Drawing.Size(83, 68);
             this.toolStripDropDownButton2.Text = "toolStripDropDownButton2";
-            // 
-            // toolStripDropDownButton3
-            // 
-            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem18,
-            this.toolStripMenuItem19,
-            this.toolStripMenuItem20,
-            this.toolStripMenuItem21});
-            this.toolStripDropDownButton3.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_mars;
-            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(83, 68);
-            this.toolStripDropDownButton3.Text = "toolStripDropDownButton3";
-            // 
-            // toolStripDropDownButton4
-            // 
-            this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton4.Image")));
-            this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
-            this.toolStripDropDownButton4.Size = new System.Drawing.Size(83, 68);
-            this.toolStripDropDownButton4.Text = "toolStripDropDownButton4";
             // 
             // toolStripMenuItem6
             // 
@@ -275,7 +262,7 @@ namespace HexaMazeRetreat.Editor
             this.toolStripMenuItem14.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
             this.toolStripMenuItem14.Size = new System.Drawing.Size(515, 152);
-            this.toolStripMenuItem14.Text = "toolStripMenuItem14";
+            this.toolStripMenuItem14.Text = "Farm 1 (not a path)";
             // 
             // toolStripMenuItem15
             // 
@@ -283,7 +270,7 @@ namespace HexaMazeRetreat.Editor
             this.toolStripMenuItem15.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem15.Name = "toolStripMenuItem15";
             this.toolStripMenuItem15.Size = new System.Drawing.Size(515, 152);
-            this.toolStripMenuItem15.Text = "toolStripMenuItem15";
+            this.toolStripMenuItem15.Text = "Farm 2 (not a path)";
             // 
             // toolStripMenuItem16
             // 
@@ -291,7 +278,7 @@ namespace HexaMazeRetreat.Editor
             this.toolStripMenuItem16.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem16.Name = "toolStripMenuItem16";
             this.toolStripMenuItem16.Size = new System.Drawing.Size(515, 152);
-            this.toolStripMenuItem16.Text = "toolStripMenuItem16";
+            this.toolStripMenuItem16.Text = "Farm 3 (not a path)";
             // 
             // toolStripMenuItem17
             // 
@@ -299,39 +286,77 @@ namespace HexaMazeRetreat.Editor
             this.toolStripMenuItem17.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem17.Name = "toolStripMenuItem17";
             this.toolStripMenuItem17.Size = new System.Drawing.Size(515, 152);
-            this.toolStripMenuItem17.Text = "toolStripMenuItem17";
+            this.toolStripMenuItem17.Text = "Farm 4 (not a path)";
             // 
-            // toolStripMenuItem18
+            // toolStripDropDownButton3
             // 
-            this.toolStripMenuItem18.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_dirt;
-            this.toolStripMenuItem18.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(447, 152);
-            this.toolStripMenuItem18.Text = "Dirt path";
+            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dirtToolStripMenuItem,
+            this.marsToolStripMenuItem,
+            this.sandToolStripMenuItem,
+            this.stoneToolStripMenuItem});
+            this.toolStripDropDownButton3.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_mars;
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(83, 68);
+            this.toolStripDropDownButton3.Text = "toolStripDropDownButton3";
             // 
-            // toolStripMenuItem19
+            // dirtToolStripMenuItem
             // 
-            this.toolStripMenuItem19.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_mars;
-            this.toolStripMenuItem19.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem19.Name = "toolStripMenuItem19";
-            this.toolStripMenuItem19.Size = new System.Drawing.Size(447, 152);
-            this.toolStripMenuItem19.Text = "Mars path";
+            this.dirtToolStripMenuItem.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_dirt;
+            this.dirtToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.dirtToolStripMenuItem.Name = "dirtToolStripMenuItem";
+            this.dirtToolStripMenuItem.Size = new System.Drawing.Size(351, 152);
+            this.dirtToolStripMenuItem.Text = "Dirt path";
+            this.dirtToolStripMenuItem.Click += new System.EventHandler(this.dirtToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem20
+            // marsToolStripMenuItem
             // 
-            this.toolStripMenuItem20.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_sand;
-            this.toolStripMenuItem20.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem20.Name = "toolStripMenuItem20";
-            this.toolStripMenuItem20.Size = new System.Drawing.Size(447, 152);
-            this.toolStripMenuItem20.Text = "Sand path";
+            this.marsToolStripMenuItem.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_mars;
+            this.marsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.marsToolStripMenuItem.Name = "marsToolStripMenuItem";
+            this.marsToolStripMenuItem.Size = new System.Drawing.Size(351, 152);
+            this.marsToolStripMenuItem.Text = "Mars path";
+            this.marsToolStripMenuItem.Click += new System.EventHandler(this.marsToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem21
+            // sandToolStripMenuItem
             // 
-            this.toolStripMenuItem21.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_stone;
-            this.toolStripMenuItem21.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem21.Name = "toolStripMenuItem21";
-            this.toolStripMenuItem21.Size = new System.Drawing.Size(447, 152);
-            this.toolStripMenuItem21.Text = "Stone path";
+            this.sandToolStripMenuItem.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_sand;
+            this.sandToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.sandToolStripMenuItem.Name = "sandToolStripMenuItem";
+            this.sandToolStripMenuItem.Size = new System.Drawing.Size(351, 152);
+            this.sandToolStripMenuItem.Text = "Sand path";
+            this.sandToolStripMenuItem.Click += new System.EventHandler(this.sandToolStripMenuItem_Click);
+            // 
+            // stoneToolStripMenuItem
+            // 
+            this.stoneToolStripMenuItem.Image = global::HexaMazeRetreat.Editor.Properties.Resources.tile_stone;
+            this.stoneToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.stoneToolStripMenuItem.Name = "stoneToolStripMenuItem";
+            this.stoneToolStripMenuItem.Size = new System.Drawing.Size(351, 152);
+            this.stoneToolStripMenuItem.Text = "Stone path";
+            this.stoneToolStripMenuItem.Click += new System.EventHandler(this.stoneToolStripMenuItem_Click);
+            // 
+            // toolStripDropDownButton4
+            // 
+            this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton4.Image")));
+            this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
+            this.toolStripDropDownButton4.Size = new System.Drawing.Size(83, 68);
+            this.toolStripDropDownButton4.Text = "toolStripDropDownButton4";
+            // 
+            // mazeEditor
+            // 
+            this.mazeEditor.ActiveEditTile = HexaMazeRetreat.Editor.TileKind.Empty;
+            this.mazeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mazeEditor.Location = new System.Drawing.Point(91, 3);
+            this.mazeEditor.MapHeight = 10;
+            this.mazeEditor.MapWidth = 10;
+            this.mazeEditor.Name = "mazeEditor";
+            this.mazeEditor.Size = new System.Drawing.Size(1903, 973);
+            this.mazeEditor.TabIndex = 1;
             // 
             // EditorForm
             // 
@@ -375,10 +400,12 @@ namespace HexaMazeRetreat.Editor
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem17;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem18;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem19;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem20;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem21;
+        private System.Windows.Forms.ToolStripMenuItem dirtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem marsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sandToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stoneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox mapWidthToolStripTextBox;
+        private System.Windows.Forms.ToolStripTextBox mapHeightToolStripTextBox;
     }
 }
 
