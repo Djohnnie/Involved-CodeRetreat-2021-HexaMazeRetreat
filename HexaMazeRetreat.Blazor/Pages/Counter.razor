@@ -1,0 +1,18 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<img src="https://www.techsmith.com/blog/wp-content/uploads/2020/11/TechSmith-Blog-JPGvsPNG.png" />
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

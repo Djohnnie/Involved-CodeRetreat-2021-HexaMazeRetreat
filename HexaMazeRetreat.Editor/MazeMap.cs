@@ -37,6 +37,8 @@ namespace HexaMazeRetreat.Editor
             }
         }
 
+        public MazeMap() { }
+
         public MazeMap(int width, int height)
         {
             Rebuild(width, height);

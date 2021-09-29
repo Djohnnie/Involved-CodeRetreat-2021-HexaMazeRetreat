@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace HexaMazeRetreat.Editor
@@ -30,11 +31,6 @@ namespace HexaMazeRetreat.Editor
             SetActiveEditTile(TileKind.Stone);
         }
 
-        private void SetActiveEditTile(TileKind tileKind)
-        {
-            mazeEditor.ActiveEditTile = tileKind;
-        }
-
         private void mapWidthToolStripTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -53,6 +49,109 @@ namespace HexaMazeRetreat.Editor
                 mazeEditor.MapHeight = height;
             }
             catch { /* Ignore formatting exceptions */ }
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mazeEditor.CreateNew();
+        }
+
+        private async void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "HexaMazeRetreat files (*.hexajson)|*.hexajson";
+            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                string data = await File.ReadAllTextAsync(openFileDialog.FileName);
+                mazeEditor.OpenExisting(data);
+            }
+        }
+
+        private async void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "HexaMazeRetreat files (*.hexajson)|*.hexajson";
+            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                string data = mazeEditor.SaveCurrent();
+                await File.WriteAllTextAsync(saveFileDialog.FileName, data);
+            }
+        }
+
+        private void toolStrip1_Paint(object sender, PaintEventArgs e)
+        {
+            const int iconSize = 120;
+            if (e.ClipRectangle.IntersectsWith(mapHeightToolStripTextBox.Bounds))
+            {
+                float x = (26 / 2) - (iconSize / 2);
+                float y = mapHeightToolStripTextBox.Bounds.Y + ((mapHeightToolStripTextBox.Bounds.Height / 2) - (iconSize / 2));
+                e.Graphics.DrawImage(Properties.Resources.tile_dirt, x, y);
+            }
+        }
+
+        private void grassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Grass);
+        }
+
+        private void firTreesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Trees1);
+        }
+
+        private void manyFirTreesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Trees2);
+        }
+
+        private void treesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Trees3);
+        }
+
+        private void manyTreesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Trees4);
+        }
+
+        private void sandRocksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Rocks1);
+        }
+
+        private void littleRocksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Rocks2);
+        }
+
+        private void bigRockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Rocks3);
+        }
+
+        private void farm1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Farm1);
+        }
+
+        private void farm2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Farm2);
+        }
+
+        private void farm3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Farm3);
+        }
+
+        private void farm4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Farm4);
+        }
+
+        private void SetActiveEditTile(TileKind tileKind)
+        {
+            mazeEditor.ActiveEditTile = tileKind;
         }
     }
 }
