@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Text.Json;
 using System.Windows.Forms;
+using HexaMazeRetreat.Domain;
 using Resources = HexaMazeRetreat.Editor.Properties.Resources;
 
 namespace HexaMazeRetreat.Editor

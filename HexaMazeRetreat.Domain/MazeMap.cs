@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace HexaMazeRetreat.Editor
+namespace HexaMazeRetreat.Domain
 {
     public class MazeMap : List<MazeTile>
     {

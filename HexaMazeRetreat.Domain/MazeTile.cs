@@ -1,4 +1,4 @@
-﻿namespace HexaMazeRetreat.Editor
+﻿namespace HexaMazeRetreat.Domain
 {
     public class MazeTile
     {

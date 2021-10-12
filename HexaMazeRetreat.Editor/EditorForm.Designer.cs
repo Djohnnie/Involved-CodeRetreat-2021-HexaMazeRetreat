@@ -356,7 +356,7 @@ namespace HexaMazeRetreat.Editor
             // 
             // mazeEditor
             // 
-            this.mazeEditor.ActiveEditTile = HexaMazeRetreat.Editor.TileKind.Empty;
+            this.mazeEditor.ActiveEditTile = HexaMazeRetreat.Domain.TileKind.Empty;
             this.mazeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mazeEditor.Location = new System.Drawing.Point(91, 3);
             this.mazeEditor.MapHeight = 10;
