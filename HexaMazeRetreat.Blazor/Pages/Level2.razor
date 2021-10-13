@@ -1,12 +1,10 @@
 ﻿@using HexaMazeRetreat.Blazor.Helpers
 @using HexaMazeRetreat.Domain.Contracts
 
-@page "/"
+@page "/level2"
 @inject PlaysHelper _playsHelper
 
-<h1>Involved HexaMazeRetreat 15 oktober 2021</h1>
-
-<p>Welkom op de Involved HexaMazeRetreat! Een variatie op onze oude MazeRetreat waarbij je een algoritme moet schrijven om de kortste route in een doolhof te bepalen.</p>
+<h1>"level-2" - Een splitsing! Wat nu?</h1>
 
 @if (_getPlayersResponse == null)
 {
@@ -14,7 +12,7 @@
 }
 else if (_getPlayersResponse.Count == 0)
 {
-    <p><em>Nog geen spelers hebben een level gespeeld!</em></p>
+    <p><em>Nog geen spelers hebben deze level gespeeld!</em></p>
 }
 else
 {
@@ -24,10 +22,10 @@ else
             var cssClass = $"solutionColor{player.Index}";
             <li class="@cssClass">@player.PlayerName</li>
         }
-    </ul>
+    </ul>   
 }
 
-<img src="_api/images/level0" />
+<img src="_api/images/level2" />
 
 @code
 {
@@ -35,6 +33,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        _getPlayersResponse = await _playsHelper.GetPlayers();
+        _getPlayersResponse = await _playsHelper.GetPlayersByLevel("level-2");
     }
 }

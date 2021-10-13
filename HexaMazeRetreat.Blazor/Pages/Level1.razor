@@ -1,18 +1,38 @@
-﻿@page "/level1"
+﻿@using HexaMazeRetreat.Blazor.Helpers
+@using HexaMazeRetreat.Domain.Contracts
 
-<h1>Counter</h1>
+@page "/level1"
+@inject PlaysHelper _playsHelper
 
-<p>Current count: @currentCount</p>
+<h1>"level-1" - Introductie</h1>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+@if (_getPlayersResponse == null)
+{
+    <p><em>Bezig met laden van data...</em></p>
+}
+else if (_getPlayersResponse.Count == 0)
+{
+    <p><em>Nog geen spelers hebben deze level gespeeld!</em></p>
+}
+else
+{
+    <ul>
+        @foreach (var player in _getPlayersResponse)
+        {
+            var cssClass = $"solutionColor{player.Index}";
+            <li class="@cssClass">@player.PlayerName</li>
+        }
+    </ul>
+}
 
 <img src="_api/images/level1" />
 
-@code {
-    private int currentCount = 0;
+@code
+{
+    private GetPlayersResponse _getPlayersResponse;
 
-    private void IncrementCount()
+    protected override async Task OnInitializedAsync()
     {
-        currentCount++;
+        _getPlayersResponse = await _playsHelper.GetPlayersByLevel("level-1");
     }
 }

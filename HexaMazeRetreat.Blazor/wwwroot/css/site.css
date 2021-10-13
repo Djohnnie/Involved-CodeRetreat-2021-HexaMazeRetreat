@@ -35,6 +35,21 @@ img {
     color: red;
 }
 
+.solutionColor1 {
+    font-size: 16pt;
+    color: blue;
+}
+
+.solutionColor2 {
+    font-size: 16pt;
+    color: red;
+}
+
+.solutionColor3 {
+    font-size: 16pt;
+    color: yellow;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
