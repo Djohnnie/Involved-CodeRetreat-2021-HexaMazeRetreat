@@ -3,8 +3,11 @@
 
 @page "/level1"
 @inject PlaysHelper _playsHelper
+@inject NavigationManager _navigationManager
 
 <h1>"level-1" - Introductie</h1>
+
+<p><a href="_api/levels/level-1" target="_blank">Download level 1 JSON</a></p>
 
 @if (_getPlayersResponse == null)
 {
@@ -16,16 +19,16 @@ else if (_getPlayersResponse.Count == 0)
 }
 else
 {
-    <ul>
+    <p>
         @foreach (var player in _getPlayersResponse)
         {
             var cssClass = $"solutionColor{player.Index}";
-            <li class="@cssClass">@player.PlayerName</li>
+            <span class="@cssClass"> [ @player.PlayerName ] </span>
         }
-    </ul>
+    </p>
 }
 
-<img src="_api/images/level1" />
+<img src="_api/images/level-1" />
 
 @code
 {
@@ -34,5 +37,15 @@ else
     protected override async Task OnInitializedAsync()
     {
         _getPlayersResponse = await _playsHelper.GetPlayersByLevel("level-1");
+
+        _ = Task.Run(async () =>
+        {
+        await Task.Delay(10000);
+
+            if (_navigationManager.Uri.Contains("level1"))
+            {
+                _navigationManager.NavigateTo("/level1", true);
+            }
+        });
     }
 }

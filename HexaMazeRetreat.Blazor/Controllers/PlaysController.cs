@@ -17,18 +17,10 @@ namespace HexaMazeRetreat.Blazor.Controllers
             _playsHelper = playsHelper;
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetPlays()
-        //{
-        //    await _dbContext.Database.MigrateAsync();
-        //    var plays = await _dbContext.Plays.ToListAsync();
-        //    return Ok(plays);
-        //}
-
-        [HttpPost]
-        public async Task<IActionResult> CreatePlay(CreatePlayRequest request)
+        [HttpPost("{levelName}")]
+        public async Task<IActionResult> CreatePlay(CreatePlayRequest request, string levelName)
         {
-            await _playsHelper.CreatePlay(request);
+            await _playsHelper.CreatePlay(request, levelName);
             return Created("", request);
         }
     }

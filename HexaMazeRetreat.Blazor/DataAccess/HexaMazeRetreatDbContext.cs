@@ -19,8 +19,7 @@ namespace HexaMazeRetreat.Blazor.DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //string connectionString = _configuration.GetConnectionString();
-            string connectionString = @"Server=.\SQLDEV;Database=HexaMazeRetreat2021;Trusted_Connection=True;";
+            string connectionString = _configuration.GetConnectionString();
             optionsBuilder.UseSqlServer(connectionString);
         }
 

@@ -18,6 +18,8 @@
         Dirt,
         Mars,
         Sand,
-        Stone
+        Stone,
+        Start,
+        Finish
     }
 }

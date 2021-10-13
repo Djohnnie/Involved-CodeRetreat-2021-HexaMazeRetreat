@@ -1,13 +1,13 @@
 ﻿@using HexaMazeRetreat.Blazor.Helpers
 @using HexaMazeRetreat.Domain.Contracts
 
-@page "/level2"
+@page "/level4"
 @inject PlaysHelper _playsHelper
 @inject NavigationManager _navigationManager
 
-<h1>"level-2" - Een splitsing! Wat nu?</h1>
+<h1>"level-4" - Natuur en symmetrie :)</h1>
 
-<p><a href="_api/levels/level-2" target="_blank">Download level 2 JSON</a></p>
+<p><a href="_api/levels/level-4" target="_blank">Download level 4 JSON</a></p>
 
 @if (_getPlayersResponse == null)
 {
@@ -28,7 +28,7 @@ else
     </p>
 }
 
-<img src="_api/images/level-2" />
+<img src="_api/images/level-4" />
 
 @code
 {
@@ -36,15 +36,15 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        _getPlayersResponse = await _playsHelper.GetPlayersByLevel("level-2");
+        _getPlayersResponse = await _playsHelper.GetPlayersByLevel("level-4");
 
         _ = Task.Run(async () =>
         {
             await Task.Delay(10000);
 
-            if (_navigationManager.Uri.Contains("level2"))
+            if (_navigationManager.Uri.Contains("level4"))
             {
-                _navigationManager.NavigateTo("/level2", true);
+                _navigationManager.NavigateTo("/level4", true);
             }
         });
     }

@@ -10,6 +10,7 @@
     <None Remove="Graphics\tile_farm_2.png" />
     <None Remove="Graphics\tile_farm_3.png" />
     <None Remove="Graphics\tile_farm_4.png" />
+    <None Remove="Graphics\tile_finish.png" />
     <None Remove="Graphics\tile_frame.png" />
     <None Remove="Graphics\tile_grass.png" />
     <None Remove="Graphics\tile_mars.png" />
@@ -21,10 +22,14 @@
     <None Remove="Graphics\tile_nature_6.png" />
     <None Remove="Graphics\tile_nature_7.png" />
     <None Remove="Graphics\tile_sand.png" />
+    <None Remove="Graphics\tile_start.png" />
     <None Remove="Graphics\tile_stone.png" />
-    <None Remove="Levels\level0.hexajson" />
-    <None Remove="Levels\level1.hexajson" />
-    <None Remove="Levels\level2.hexajson" />
+    <None Remove="Levels\level-0.hexajson" />
+    <None Remove="Levels\level-1.hexajson" />
+    <None Remove="Levels\level-2.hexajson" />
+    <None Remove="Levels\level-3.hexajson" />
+    <None Remove="Levels\level-4.hexajson" />
+    <None Remove="Levels\level-5.hexajson" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +38,7 @@
     <EmbeddedResource Include="Graphics\tile_farm_2.png" />
     <EmbeddedResource Include="Graphics\tile_farm_3.png" />
     <EmbeddedResource Include="Graphics\tile_farm_4.png" />
+    <EmbeddedResource Include="Graphics\tile_finish.png" />
     <EmbeddedResource Include="Graphics\tile_frame.png" />
     <EmbeddedResource Include="Graphics\tile_grass.png" />
     <EmbeddedResource Include="Graphics\tile_mars.png" />
@@ -44,10 +50,14 @@
     <EmbeddedResource Include="Graphics\tile_nature_6.png" />
     <EmbeddedResource Include="Graphics\tile_nature_7.png" />
     <EmbeddedResource Include="Graphics\tile_sand.png" />
+    <EmbeddedResource Include="Graphics\tile_start.png" />
     <EmbeddedResource Include="Graphics\tile_stone.png" />
-    <EmbeddedResource Include="Levels\level0.hexajson" />
-    <EmbeddedResource Include="Levels\level1.hexajson" />
-    <EmbeddedResource Include="Levels\level2.hexajson" />
+    <EmbeddedResource Include="Levels\level-0.hexajson" />
+    <EmbeddedResource Include="Levels\level-1.hexajson" />
+    <EmbeddedResource Include="Levels\level-2.hexajson" />
+    <EmbeddedResource Include="Levels\level-3.hexajson" />
+    <EmbeddedResource Include="Levels\level-4.hexajson" />
+    <EmbeddedResource Include="Levels\level-5.hexajson" />
   </ItemGroup>
 
   <ItemGroup>

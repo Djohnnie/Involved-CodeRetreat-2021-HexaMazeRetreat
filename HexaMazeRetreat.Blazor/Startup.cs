@@ -27,8 +27,10 @@ namespace HexaMazeRetreat.Blazor
             {
                 c.SwaggerDoc("v2021", new OpenApiInfo { Title = "HexaMazeRetreat", Version = "v2021" });
             });
+            services.AddMemoryCache();
             services.AddDbContext<HexaMazeRetreatDbContext>();
             services.AddScoped<PlaysHelper>();
+            services.AddScoped<LevelsHelper>();
             services.AddScoped<LevelBuilderHelper>();
             services.AddSingleton<GraphicsCacheHelper>();
         }

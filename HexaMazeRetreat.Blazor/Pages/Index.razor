@@ -7,6 +7,8 @@
 <h1>Involved HexaMazeRetreat 15 oktober 2021</h1>
 
 <p>Welkom op de Involved HexaMazeRetreat! Een variatie op onze oude MazeRetreat waarbij je een algoritme moet schrijven om de kortste route in een doolhof te bepalen.</p>
+<p>Check out the source code for more information: <a href="https://github.com/Djohnnie/Involved-CodeRetreat-2021-HexaMazeRetreat" target="_blank">Djohnnie/Involved-CodeRetreat-2021-HexaMazeRetreat</a></p>
+<p>Gebruik Swagger om de API aan te spreken: <a href="swagger" target="_blank">Swagger</a></p>
 
 @if (_getPlayersResponse == null)
 {
@@ -18,16 +20,16 @@ else if (_getPlayersResponse.Count == 0)
 }
 else
 {
-    <ul>
+    <p>
         @foreach (var player in _getPlayersResponse)
         {
             var cssClass = $"solutionColor{player.Index}";
-            <li class="@cssClass">@player.PlayerName</li>
+            <span class="@cssClass"> [ @player.PlayerName ] </span>
         }
-    </ul>
+    </p>
 }
 
-<img src="_api/images/level0" />
+<img src="_api/images/level-0" />
 
 @code
 {

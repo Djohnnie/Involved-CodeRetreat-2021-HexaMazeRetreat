@@ -1,4 +1,5 @@
-﻿using HexaMazeRetreat.Domain;
+﻿using System;
+using HexaMazeRetreat.Domain;
 using SixLabors.ImageSharp;
 using System.Collections.Concurrent;
 using SixLabors.ImageSharp.Processing;
@@ -8,6 +9,7 @@ namespace HexaMazeRetreat.Blazor.Helpers
     public class GraphicsCacheHelper
     {
         private readonly ConcurrentDictionary<TileKind, Image> _graphicsCache = new();
+        private readonly ConcurrentDictionary<string, Image> _levelCache = new();
 
         public Image GetImageByTileKind(TileKind tileKind, int tileSize)
         {
@@ -23,6 +25,18 @@ namespace HexaMazeRetreat.Blazor.Helpers
             _graphicsCache.TryAdd(tileKind, tileImage);
 
             return tileImage;
+        }
+
+        public Image GetLevelByName(string levelName, Func<Image> levelFactory)
+        {
+            if (_levelCache.ContainsKey(levelName))
+            {
+                return _levelCache[levelName];
+            }
+
+            var levelImage = levelFactory();
+            _levelCache.TryAdd(levelName, levelImage);
+            return levelImage;
         }
 
         private string GetResourceNameByTileKind(TileKind tileKind)
@@ -46,6 +60,8 @@ namespace HexaMazeRetreat.Blazor.Helpers
                 TileKind.Farm2 => "tile_farm_2",
                 TileKind.Farm3 => "tile_farm_3",
                 TileKind.Farm4 => "tile_farm_4",
+                TileKind.Start => "tile_start",
+                TileKind.Finish => "tile_finish",
                 _ => "tile_frame"
             };
 

@@ -113,6 +113,16 @@ namespace HexaMazeRetreat.Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tile_finish {
+            get {
+                object obj = ResourceManager.GetObject("tile_finish", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tile_frame {
             get {
                 object obj = ResourceManager.GetObject("tile_frame", resourceCulture);
@@ -216,6 +226,16 @@ namespace HexaMazeRetreat.Editor.Properties {
         internal static System.Drawing.Bitmap tile_sand {
             get {
                 object obj = ResourceManager.GetObject("tile_sand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tile_start {
+            get {
+                object obj = ResourceManager.GetObject("tile_start", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

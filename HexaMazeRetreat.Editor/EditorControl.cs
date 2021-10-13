@@ -25,6 +25,8 @@ namespace HexaMazeRetreat.Editor
         private readonly Bitmap _tileFarm2 = new(Resources.tile_farm_2);
         private readonly Bitmap _tileFarm3 = new(Resources.tile_farm_3);
         private readonly Bitmap _tileFarm4 = new(Resources.tile_farm_4);
+        private readonly Bitmap _tileStart = new(Resources.tile_start);
+        private readonly Bitmap _tileFinish = new(Resources.tile_finish);
 
         private Point? _cursorLocation;
         private Point? _mapOffset;
@@ -140,6 +142,8 @@ namespace HexaMazeRetreat.Editor
                 TileKind.Farm2 => _tileFarm2,
                 TileKind.Farm3 => _tileFarm3,
                 TileKind.Farm4 => _tileFarm4,
+                TileKind.Start => _tileStart,
+                TileKind.Finish => _tileFinish,
                 _ => _tileFrame,
             };
         }

@@ -150,9 +150,24 @@ namespace HexaMazeRetreat.Editor
             SetActiveEditTile(TileKind.Farm4);
         }
 
+        private void startToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Start);
+        }
+
+        private void finishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetActiveEditTile(TileKind.Finish);
+        }
+
         private void SetActiveEditTile(TileKind tileKind)
         {
             mazeEditor.ActiveEditTile = tileKind;
+        }
+
+        private void EditorForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
