@@ -1,5 +1,6 @@
 using HexaMazeRetreat.Blazor.DataAccess;
 using HexaMazeRetreat.Blazor.Helpers;
+using HexaMazeRetreat.Blazor.Validators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +30,7 @@ namespace HexaMazeRetreat.Blazor
             });
             services.AddMemoryCache();
             services.AddDbContext<HexaMazeRetreatDbContext>();
+            services.AddScoped<LevelsValidator>();
             services.AddScoped<PlaysHelper>();
             services.AddScoped<LevelsHelper>();
             services.AddScoped<LevelBuilderHelper>();

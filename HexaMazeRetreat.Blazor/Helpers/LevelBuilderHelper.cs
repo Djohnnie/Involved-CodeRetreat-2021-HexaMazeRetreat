@@ -167,11 +167,11 @@ namespace HexaMazeRetreat.Blazor.Helpers
                         case SolutionStep.SouthWest:
                             if (lastPoint.Y % 2 == 0)
                             {
-                                lastPoint = new Point(lastPoint.X, lastPoint.Y + 1);
+                                lastPoint = new Point(lastPoint.X - 1, lastPoint.Y + 1);
                             }
                             else
                             {
-                                lastPoint = new Point(lastPoint.X - 1, lastPoint.Y + 1);
+                                lastPoint = new Point(lastPoint.X, lastPoint.Y + 1);
                             }
                             break;
                         case SolutionStep.West:
@@ -180,11 +180,11 @@ namespace HexaMazeRetreat.Blazor.Helpers
                         case SolutionStep.NorthWest:
                             if (lastPoint.Y % 2 == 0)
                             {
-                                lastPoint = new Point(lastPoint.X, lastPoint.Y - 1);
+                                lastPoint = new Point(lastPoint.X - 1, lastPoint.Y - 1);
                             }
                             else
                             {
-                                lastPoint = new Point(lastPoint.X - 1, lastPoint.Y - 1);
+                                lastPoint = new Point(lastPoint.X, lastPoint.Y - 1);
                             }
                             break;
                     }
