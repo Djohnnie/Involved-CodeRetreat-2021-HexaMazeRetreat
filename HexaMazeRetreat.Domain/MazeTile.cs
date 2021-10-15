@@ -7,6 +7,11 @@
         public TileKind Kind { get; set; }
         public bool IsUsed { get; set; }
 
+        public MazeTile()
+        {
+            
+        }
+
         public MazeTile(int x, int y, TileKind kind)
         {
             X = x;
