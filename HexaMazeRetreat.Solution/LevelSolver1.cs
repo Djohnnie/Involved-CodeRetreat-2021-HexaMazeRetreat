@@ -5,7 +5,7 @@ using SixLabors.ImageSharp;
 
 namespace HexaMazeRetreat.Solution
 {
-    public class LevelSolver
+    public class LevelSolver1
     {
         public Domain.Solution SolveLevel(MazeMap map)
         {

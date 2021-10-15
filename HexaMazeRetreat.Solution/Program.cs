@@ -7,8 +7,8 @@ namespace HexaMazeRetreat.Solution
 {
     class Program
     {
-        private static readonly ApiClient _apiClient = new ApiClient();
-        private static readonly LevelSolver _levelSolver = new LevelSolver();
+        private static readonly ApiClient _apiClient = new();
+        private static readonly LevelSolver2 _levelSolver = new();
 
         static async Task Main(string[] args)
         {
